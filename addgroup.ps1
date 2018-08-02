@@ -1,0 +1,1 @@
+import-csv c:\users\raksmey\desktop\third_sheet.csv | foreach-object {Add-ADGroupMember -Identity g_bmet -Member $_.SamAccountName}
