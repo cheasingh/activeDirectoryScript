@@ -1,3 +1,2 @@
-SamAccountName,Division,Office,City
-Raksmey,Network,ICT,USA
-Joe,Program,ICT,JAPEN
+Name,SamAccountName,sn,cn,DisplayName,AccountPassword
+john dew,j.dew,john,dew,John Dew,dummypass123
