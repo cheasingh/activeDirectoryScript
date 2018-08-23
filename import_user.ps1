@@ -1,2 +1,2 @@
-import-csv [filelocation.csv] | foreach-object { $userprincipalname = $_.SamAccountName + ["@test.com"] 
-New-ADUser -SamAccountName $_.SamAccountName -UserPrincipalName $userprincipalname -Name $_.name -DisplayName $_.name -GivenName $_.cn -SurName $_.sn -Department $_.Department -Path ["OU=Users,DC=test,DC=edu"] -Officephone $_.OfficePhone -ScriptPath $_.Scriptpath -Company $_.Company -AccountPassword (ConvertTo-SecureString -AsPlainText $_.Password -force) -Enabled $True -PasswordNeverExpires $True -PassThru }
+import-csv "[filelocation]" | foreach-object { 
+New-ADUser -Name $_.name -SamAccountName $_.SamAccountName -UserPrincipalName "$($_.SamAccountName)@test.local" -GivenName $_.cn -SurName $_.sn -DisplayName $_.displayname -Path "OU=user,DC=test,DC=com" -AccountPassword (ConvertTo-SecureString -AsPlainText $_.Password -force) -Enabled $True -PasswordNeverExpires $True -PassThru }
